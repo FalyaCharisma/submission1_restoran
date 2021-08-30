@@ -1,6 +1,5 @@
   
 import 'package:flutter/material.dart';
-import 'package:submission1_restoran/restoran.dart';
 import './launcher.dart';
 
 void main() {
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Restoran(),
+      home: LauncherPage(),
     );
   }
 }

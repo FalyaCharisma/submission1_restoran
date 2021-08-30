@@ -71,13 +71,13 @@ class RestoranDetail extends StatelessWidget{
                     ),
                   ),
                   for(var food in restoran.menu.foods)
-                  Text(food.name),
+                    Text(food.name),
                   Container(
                     margin: EdgeInsets.fromLTRB(8, 8, 8, 0),
                     height: 30,
                     color: Colors.blue,
                     child: Row(
-                       mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text("Menu Minuman: ", style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
                       ],

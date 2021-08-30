@@ -32,7 +32,6 @@ class _RestoranState extends State<Restoran> {
           _list.add(RestoranModel.fromJson(i));
           loading= false;
         }
-
       });
     }
   }
@@ -98,25 +97,25 @@ class _RestoranState extends State<Restoran> {
                   itemBuilder: (context, i){
                     final a = _search[i];
                     return Card(
-                color: Colors.white,
-                elevation: 2.0,
-                child: ListTile(
-                  leading: 
-                  Image.network(a.pictureId),
-                  title: Text(a.name),
-                  subtitle: 
-                  Text(
-                    'Rating: ' + a.rating.toString() + '\n'
-                    'City: ' + a.city + '\n'
-                  ),
-                  onTap:(){
-                    MaterialPageRoute route = MaterialPageRoute(
-                      builder: (_) => RestoranDetail(_list[i]),
+                      color: Colors.white,
+                      elevation: 2.0,
+                      child: ListTile(
+                        leading: 
+                        Image.network(a.pictureId),
+                        title: Text(a.name),
+                        subtitle: 
+                        Text(
+                          'Rating: ' + a.rating.toString() + '\n'
+                          'City: ' + a.city + '\n'
+                        ),
+                        onTap:(){
+                          MaterialPageRoute route = MaterialPageRoute(
+                            builder: (_) => RestoranDetail(_list[i]),
+                          );
+                            Navigator.push(context, route);
+                        },
+                      ),
                     );
-                       Navigator.push(context, route);
-                  },
-                ),
-              );
                   }
                 ) :
                 ListView.builder(
@@ -124,31 +123,30 @@ class _RestoranState extends State<Restoran> {
                 itemBuilder: (context, i){
                   final x = _list[i];
                   return Card(
-                color: Colors.white,
-                elevation: 2.0,
-                child: ListTile(
-                  leading: 
-                  Image.network(x.pictureId),
-                  title: Text(x.name),
-                  subtitle: 
-                  Text(
-                    'Rating: ' + x.rating.toString() + '\n'
-                    'City: ' + x.city + '\n'
-                  ),
-                  onTap:(){
-                    MaterialPageRoute route = MaterialPageRoute(
-                      builder: (_) => RestoranDetail(_list[i]),
-                    );
-                       Navigator.push(context, route);
-                  },
-                ),
-              );
-           },
+                    color: Colors.white,
+                    elevation: 2.0,
+                    child: ListTile(
+                      leading: 
+                      Image.network(x.pictureId),
+                      title: Text(x.name),
+                      subtitle: 
+                      Text(
+                        'Rating: ' + x.rating.toString() + '\n'
+                        'City: ' + x.city + '\n'
+                      ),
+                      onTap:(){
+                        MaterialPageRoute route = MaterialPageRoute(
+                          builder: (_) => RestoranDetail(_list[i]),
+                        );
+                        Navigator.push(context, route);
+                      },
+                    ),
+                  );
+                },
+              ),
+            ),    
+          ],
         ),
-                ),
-              
-            ],
-          ),
       ),
     );
   }

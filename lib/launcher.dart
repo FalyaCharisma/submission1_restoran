@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:submission1_restoran/restoran.dart';
 import 'dart:async';
-import './landing.dart';
 
 class LauncherPage extends StatefulWidget {
   @override
@@ -18,14 +18,14 @@ class _LauncherPageState extends State<LauncherPage> {
     var duration = const Duration(seconds: 10);
     return new Timer(duration, () {
       Navigator.of(context).pushReplacement(new MaterialPageRoute(builder: (_) {
-        return new LandingPage() ;
+        return new Restoran() ;
       }));
     });
   }
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: Color(0xfffbb448), 
+      statusBarColor: Colors.blue, 
     ));
     return Scaffold(
       body: Container(
@@ -35,28 +35,25 @@ class _LauncherPageState extends State<LauncherPage> {
             borderRadius: BorderRadius.all(Radius.circular(5)),
             boxShadow: <BoxShadow>[
               BoxShadow(
-                  color: Colors.grey.shade200,
+                  color: Colors.blue.shade200,
                   offset: Offset(2, 4),
                   blurRadius: 5,
                   spreadRadius: 2)
             ],
-            gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [Color(0xfffbb448), Color(0xfff7892b)])),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            new Center(
-              child: new Image.network(
-                "https://s.tmimgcdn.com/scr/1204x1146/143200/restaurant-plate-logo-template_143256-original.jpg",
-                height: 70.0,
-                width: 200.0,
-              ),
             ),
-          ],
-        ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                new Center(
+                  child: new Image.network(
+                    "https://s.tmimgcdn.com/scr/1204x1146/143200/restaurant-plate-logo-template_143256-original.jpg",
+                    height: 100.0,
+                    width: 230.0,
+                  ),
+                ),
+              ],
+            ),
       ),
     );
   }
