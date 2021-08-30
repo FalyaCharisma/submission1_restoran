@@ -6,11 +6,9 @@ class RestoranModel{
   final String city;
   final double rating;
   final MenuModel menu;
-  final Food food;
-  final Drink drink;
 
   RestoranModel({required this.id, required this.name, required this.description, required this.pictureId,
-   required this.city, required this.rating, required this.menu, required this.food, required this.drink});
+   required this.city, required this.rating, required this.menu});
 
   factory RestoranModel.fromJson(Map<String, dynamic> json){
     return RestoranModel(
@@ -19,10 +17,8 @@ class RestoranModel{
       description: json['description'] as String,
       pictureId: json['pictureId'] as String,
       city: json['city'] as String,
-      rating: json['rating'] as double,
+      rating: (json['rating'] as num).toDouble(),
       menu: MenuModel.fromJson(json['menus']),
-      food: Food.fromJson(json['foods']),
-      drink: Drink.fromJson(json['drinks'])
     );
   }
 }
